@@ -27,8 +27,6 @@ spec:
       labels:
         app: captains-log
     spec:
-      imagePullSecrets:
-      - name: dockerhub-user-secret
       containers:
       - image: kong/blog:captains-log
         name: captains-log
