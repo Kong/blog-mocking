@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: captains-log-imposter
+data:
+  imposter.json: |
+    {
+      "port": 5000,
+      "protocol": "http",
+      "stubs": [
+        {
+          "predicates": [
+            {
+              "equals": {
+                "method": "GET",
+                "path": "/"
+              }
+            }
+          ],
+          "responses": [
+            {
+              "is": {
+                "statusCode": 200,
+                "headers": {
+                  "X-Mocked": "true",
+                  "Content-Type": "application/json"
+                },
+                "body": {
+                    "entries": [
+                        {
+                            "crewMemberId": "111-11-1111",
+                            "rank": "captain",
+                            "ship_id": "NCC-1701",
+                            "stardate": "98398.64",
+                            "title": "Kong Mesh Traffic Permissions",
+                            "transcript": "Started using traffic permission policy in Kong Mesh today"
+                        }
+                    ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }

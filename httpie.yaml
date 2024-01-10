@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: httpie
+  labels:
+    app: httpie
+spec:
+  containers:
+  - image: clue/httpie
+    command:
+      - sleep
+      - '3600'
+    imagePullPolicy: IfNotPresent
+    name: httpie
+  restartPolicy: Always

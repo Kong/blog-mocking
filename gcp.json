@@ -1,0 +1,7 @@
+{
+    "name": "My Global Control Plane",
+    "description": "A test control plane for exploration.",
+    "labels": {
+      "test": "true"
+    }
+  }

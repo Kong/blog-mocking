@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: captains-log
+  labels:
+    app: captains-log
+spec:
+  ports:
+  - name: http
+    port: 5000
+    targetPort: 5000
+    appProtocol: http
+  selector:
+    app: captains-log
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: captains-log
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: captains-log
+  template:
+    metadata:
+      labels:
+        app: captains-log
+    spec:
+      imagePullSecrets:
+      - name: dockerhub-user-secret
+      containers:
+      - image: kong/blog:captains-log
+        name: captains-log
+        imagePullPolicy: IfNotPresent

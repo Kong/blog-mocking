@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    konghq.com/mocking-imposter: captains-log-imposter
+  labels:
+    app: captains-log
+  name: captains-log
+spec:
+  ports:
+  - appProtocol: http
+    name: http
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: mountebank
