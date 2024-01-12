@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ship-info
+  labels:
+    app: ship-info
+spec:
+  ports:
+  - name: http
+    port: 5000
+    targetPort: 5000
+    appProtocol: http
+  selector:
+    app: ship-info
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ship-info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ship-info
+  template:
+    metadata:
+      labels:
+        app: ship-info
+    spec:
+      containers:
+      - image: kong/blog:ship-info
+        name: ship-info
+        imagePullPolicy: Always
