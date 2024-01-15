@@ -1,0 +1,15 @@
+type: TrafficRoute
+name: captains-log-real-route
+mesh: default
+sources:
+- match:
+    kuma.io/service: httpie_my-services_svc
+destinations:
+- match:
+    kuma.io/service: captains-log_my-services_svc_5000
+conf:
+  split:
+    - weight: 100
+      destination:
+        kuma.io/service: captains-log_my-services_svc_5000
+        app: captains-log
