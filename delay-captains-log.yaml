@@ -3,7 +3,7 @@ mesh: default
 name: delay-captains-log
 sources:
  - match:
-     kuma.io/service: httpie_my-services_svc
+     kuma.io/service: '*'
 destinations:
  - match:
      kuma.io/service: captains-log_my-services_svc_5000
