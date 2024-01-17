@@ -620,7 +620,7 @@ def request():
 
 In the `requests.get` lines, notice the .mesh addresses on port 80. These are the internal service mesh URLs and ports anybody can use to access the service. The underlying data plane proxy knows the actual service host and port to call. You can see the mesh urls inside the Konnect Mesh Manager under the services tab.
 
-If you would like to revert back to the original state, just delete the traffic route.
+If you would like to revert back to the original state, just delete the imposter traffic route.
 
 ```
 kumactl delete traffic-route captains-log-imposter-route
