@@ -81,9 +81,10 @@ Now that `kumactl` is configured, run the below command. The below command will 
 
 ```
 kumactl apply -f default-mesh.yaml
-
 kumactl get meshes
+```
 
+```
 NAME      mTLS           METRICS   LOGGING   TRACING   LOCALITY   ZONEEGRESS   AGE
 default   builtin/ca-1   off       off       off       off        off          2s
 ```
@@ -101,7 +102,9 @@ First, we will provision the zone that contain the "real" services.
 ```
 # this will return the id of the newly created zone control plane
 http POST $BASE_URL/v0/mesh/control-planes/$GCP_ID/api/provision-zone name="real-services" Authorization:$KONNECT_TOKEN
+```
 
+```
 # sample output
 {
     "token": "xyz"
@@ -117,7 +120,9 @@ Next, we will provision our mocked service zone.
 
 ```
 http POST $BASE_URL/v0/mesh/control-planes/$GCP_ID/api/provision-zone name="mock-services" Authorization:$KONNECT_TOKEN
+```
 
+```
 # sample output
 {
     "token": "xyz"
