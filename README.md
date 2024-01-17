@@ -12,7 +12,7 @@ Having a solid mocking foundation for the enterprise is crucial for building rel
 * [httpie](https://httpie.io/) (or some other command line HTTP client)
 
 
-_Note: Because we are communicating from cluster to cluster, it is important that you are able to create LoadBalanced services inside your Kubernetes clusters._
+_Note: Because we are communicating from cluster to cluster, it is important that you are able to create services of type LoadBalanced inside your Kubernetes clusters._
 
 ##### Summary
 
