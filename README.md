@@ -69,7 +69,9 @@ Test your `kumactl` configuration:
 
 ```
 kumactl get meshes
+```
 
+```
 # output
 NAME      mTLS   METRICS   LOGGING   TRACING   LOCALITY   ZONEEGRESS   AGE
 default   off    off       off       off       off        off          43s
