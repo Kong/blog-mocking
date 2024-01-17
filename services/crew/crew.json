@@ -1,0 +1,24 @@
+{
+    "entries": [
+        {
+            "rank": "captain",
+            "id": "111-11-1113",
+            "name": "Christopher Pike"
+        },
+        {
+            "rank": "captain",
+            "id": "111-11-1111",
+            "name": "James T. Kirk"
+        },
+        {
+            "rank": "captain",
+            "id": "111-11-1112",
+            "name": "Jean Luc Picard"
+        },
+        {
+            "rank": "ensign",
+            "id": "111-11-1114",
+            "name": "Red Shirt Guy"
+        }
+    ]
+}
