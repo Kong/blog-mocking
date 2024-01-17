@@ -35,7 +35,9 @@ Once you have your PAT, the next thing we need to do is create a global control 
 BASE_URL=https://us.api.konghq.com
 KONNECT_TOKEN=your-token
 http POST $BASE_URL/v1/mesh/control-planes Authorization:$KONNECT_TOKEN < gcp.json
+```
 
+```
 # sample output
 {
     "created_at": "2024-01-04T14:10:14.190310907Z",
@@ -195,8 +197,9 @@ Once the httpie services is online in the mesh, open a shell on the newly create
 
 ```
 kubectl exec -it pod/httpie -n $NAMESPACE -- http http://captains-log_my-services_svc_5000.mesh
+```
 
-
+```
 HTTP/1.1 200 OK
 content-length: 1188
 content-type: application/json
@@ -246,7 +249,9 @@ Test the crew service.
 
 ```
 kubectl exec -it pod/httpie -n $NAMESPACE -- http http://crew_my-services_svc_5000.mesh
+```
 
+```
 HTTP/1.1 200 OK
 content-length: 513
 content-type: application/json
@@ -284,7 +289,8 @@ Test the Ship Info service.
 
 ```
 kubectl exec -it pod/httpie -n $NAMESPACE -- http http://ship-info_my-services_svc_5000.mesh
-
+```
+```
 HTTP/1.1 200 OK
 content-length: 504
 content-type: application/json
@@ -388,7 +394,9 @@ Wait a few seconds for the Global Control Plane to propagate your policy. You sh
 
 ```
 kubectl exec -it pod/httpie -n $NAMESPACE -- http http://captains-log_my-services_svc_5000.mesh
+```
 
+```
 HTTP/1.1 200 OK
 content-length: 1188
 content-type: application/json
@@ -466,7 +474,9 @@ Execute the following command until you see the mocked response. It may take a f
 
 ```
 kubectl exec -it pod/httpie -n $NAMESPACE -- http http://captains-log_my-services_svc_5000.mesh
+```
 
+```
 HTTP/1.1 200 OK
 content-type: application/json
 date: Tue, 09 Jan 2024 17:58:06 GMT
@@ -527,7 +537,9 @@ Now execute the following command a few times, and you will see all responses fr
 
 ```
 kubectl exec -it pod/httpie -n $NAMESPACE -- http http://ship-info_my-services_svc_5000.mesh
+```
 
+```
 HTTP/1.1 200 OK
 content-length: 1046
 content-type: application/json
