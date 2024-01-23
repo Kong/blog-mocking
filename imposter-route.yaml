@@ -3,7 +3,7 @@ name: captains-log-imposter-route
 mesh: default
 sources:
 - match:
-    kuma.io/service: httpie_my-services_svc
+    kuma.io/service: ship-info_my-services_svc_5000
 destinations:
 - match:
     kuma.io/service: captains-log_my-services_svc_5000

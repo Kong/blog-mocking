@@ -16,7 +16,7 @@ _Note: Because we are communicating from cluster to cluster, it is important tha
 
 ##### Summary
 
-In order to create on-demand testing services, we will need the ability to switch from real services to mocked services during performance testing at run time. As it turns out, a service mesh is the perfect tool to accomplish this task. By routing traffic at layer 4, you can redirect traffic without changing any application configuration. In this tutorial, we are going to use [Kong Mesh](https://docs.konghq.com/konnect/mesh-manager/) running in Konnect as our service mesh implemention combined with the [TrafficRoute](https://docs.konghq.com/mesh/latest/policies/traffic-route/#main) policy. We will be running a [multizone](https://docs.konghq.com/mesh/2.5.x/production/deployment/multi-zone/) deployment for our service mesh, which allows for workloads running in different regions, on different clouds, or in different datacenters. For our mocking framework, we will be using [Mountebank](http://mbtest.org).
+In order to create on-demand testing services, we will need the ability to switch from real services to mocked services and vice versa during performance testing at run time. As it turns out, a service mesh is the perfect tool to accomplish this task. By routing traffic at layer 4, you can redirect traffic without changing any application configuration. In this tutorial, we are going to use [Kong Mesh](https://docs.konghq.com/konnect/mesh-manager/) running in Konnect as our service mesh implemention combined with the [TrafficRoute](https://docs.konghq.com/mesh/latest/policies/traffic-route/#main) policy. We will be running a [multizone](https://docs.konghq.com/mesh/2.5.x/production/deployment/multi-zone/) deployment for our service mesh, which allows for workloads running in different regions, on different clouds, or in different datacenters. For our mocking framework, we will be using [Mountebank](http://mbtest.org).
 
 In this tutorial, we will be using three micro-services. We will have two backend services that provide data, and one frontend api that calls the backend services.
 
@@ -28,7 +28,7 @@ When you are ready to begin, log into your trial Kong Konnect accoun and can cre
 
 ![personal access token](images/pat.jpg)
 
-Once you have your PAT, the next thing we need to do is create a global control plane. We can do this using an API. Inside a terminal, change to your cloned git project and run the below commands.
+Once you have your PAT, the next thing we need to do is create a global control plane. We can do this using an API. Inside a terminal, change the directory to your cloned git project and run the below commands.
 
 ##### Setup Kong Mesh Global Control Plane
 ```
@@ -372,7 +372,7 @@ Apply policy:
 kumactl apply -f delay-captains-log.yaml
 ```
 
-Since we have two Captain's Log service data plane proxies, we need to add a service mesh policy that only routes traffic to the real service instead of load balancing between the real service and mock service.
+When we are finished, we will have two Captain's Log service data plane proxies, a real one and a mock one. We need to add a service mesh policy that only routes traffic to the real service instead of load balancing between the real service and mock service.
 
 ```
 type: TrafficRoute
