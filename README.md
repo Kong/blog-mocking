@@ -24,7 +24,7 @@ In this tutorial, we will be using three micro-services. We will have two backen
 
 ##### Login to Konnect and create a Personal Access Token
 
-When you are ready to begin, log into your trial Kong Konnect accoun and can create a personal access token, which will be used to make API calls to configure our service mesh. See below screen shot.
+When you are ready to begin, log into your trial Kong Konnect account and create a personal access token, which will be used to make API calls to configure our service mesh. See below screen shot.
 
 ![personal access token](images/pat.jpg)
 
